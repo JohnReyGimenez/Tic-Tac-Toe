@@ -1,16 +1,16 @@
 class Board 
 
   def initialiaze
-    @board = Array.new(9, "") #create a board with 9 nil elements
+    @board = Array.new(8, "") #create a board with 9 nil elements
   end
   
   def display_board(board)
     puts "#{board[0]} | #{board[1]} | #{board[2]}"
     puts "------------"
-    puts "#{board[0]} | #{board[4]} | #{board[5]}"
+    puts "#{board[3]} | #{board[4]} | #{board[5]}"
     puts "------------"
     puts "------------"
-    puts "#{board[0]} | #{board[0]} | #{board[0]}"
+    puts "#{board[6]} | #{board[7]} | #{board[8]}"
   end
 
 end
