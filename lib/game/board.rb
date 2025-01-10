@@ -1,17 +1,21 @@
 class Board 
+
   def initialiaze
-   
+    @board = Array.new(9, "") #create a board with 9 nil elements
   end
- 
+  
+  def display_board(board)
+    puts "#{board[0]} | #{board[1]} | #{board[2]}"
+    puts "------------"
+    puts "#{board[0]} | #{board[4]} | #{board[5]}"
+    puts "------------"
+    puts "------------"
+    puts "#{board[0]} | #{board[0]} | #{board[0]}"
+  end
+
 end
 
-arr = Array.new(9, "")
-arr = arr.slice(0, 3)
-p arr
-for a in 1..3 do
-  arr = arr.slice(0, 3)
-end
-p arr
+
 #  make a 2d nested array that acts as the board
 #  each element in array has an array in it which contains
 #  [, blank, ] 
