@@ -15,7 +15,7 @@ class Board
 
 end
 
-
+board = 
 #  make a 2d nested array that acts as the board
 #  each element in array has an array in it which contains
 #  [, blank, ] 
