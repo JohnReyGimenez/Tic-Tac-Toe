@@ -3,7 +3,7 @@ class Player
   end
 
   def input_to_index(user_input)
-    user_input.to_i - 1
+    user_input.to_i - 1 
   end
 
   def move (board, index, player)
@@ -20,6 +20,16 @@ class Player
   def valid_move?(board, index)
     if (board.between(0,8)) && !position_taken(board, index)\
       return true
+  end
+
+  def turns(board) 
+    counter = 0
+    board.each do |cells| 
+      if cells == "X" || if cells == "O"
+        counter += 1
+      end
+    end
+    counter
   end
 end
 
