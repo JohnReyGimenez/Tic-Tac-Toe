@@ -1,5 +1,6 @@
 class Player
   def initialiaze
+    @counter = 0
   end
 
   def input_to_index(user_input)
@@ -23,13 +24,16 @@ class Player
   end
 
   def turns(board) 
-    counter = 0
     board.each do |cells| 
       if cells == "X" || if cells == "O"
         counter += 1
       end
     end
     counter
+  end
+
+  def current_turn(board)
+
   end
 end
 
