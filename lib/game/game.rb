@@ -18,6 +18,15 @@ class Game
     if counter == 9 
       puts "its a draw!"
     end 
+
+  def won?(winning_combination, board)
+    winning_combination.each do |subarray|
+      if subarray.all? {|index| board[index]}
+        return true
+      end
+    end
+    false
+  end
 end
 
 # The game has 2 tokens which are X and O
