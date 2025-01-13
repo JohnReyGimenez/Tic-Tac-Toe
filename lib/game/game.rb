@@ -12,8 +12,12 @@ class Game
     ]
   end
  
-  
-  
+  def play(board)
+    until counter == 9
+      counter += 1
+    if counter == 9 
+      puts "its a draw!"
+    end 
 end
 
 # The game has 2 tokens which are X and O
