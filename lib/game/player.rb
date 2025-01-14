@@ -1,5 +1,5 @@
 class Player
-  def initialiaze
+  def initialize
     @counter = 0
   end
 
@@ -19,7 +19,7 @@ class Player
     end
 
   def valid_move?(board, index)
-    if (board.between(0,8)) && !position_taken(board, index)\
+    if (board.between(0,8)) && !position_taken(board, index)
       return true
   end
 
@@ -33,7 +33,7 @@ class Player
   end
 
   def current_turn(board)
-
+    
   end
 end
 

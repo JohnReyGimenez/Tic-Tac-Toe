@@ -1,6 +1,6 @@
 class Board 
-  def initialiaze
-    @board = Array.new(8, "") #create a board with 9 nil elements
+  def initialize
+    @board = Array.new(9, "") #create a board with 9 nil elements
   end
   
   def display_instructions
@@ -12,6 +12,13 @@ class Board
     puts "-----------"
     puts " 7 | 8 | 9 "
     puts "Type y if you want to start"
+    start = gets.chomp
+    if start == 'y'
+      play_game
+    else
+      puts "game exited"
+    end
+
   end
 
   def display_board(board)
@@ -24,12 +31,3 @@ class Board
   
  
 end
-
-puts "Shown below are the coordinates of the cells where you will put your tokens"
-puts "to put your token(X/O) in a cell simply type the number where you wanna put it"
-puts " 1 | 2 | 3 "
-puts "-----------"
-puts " 4 | 5 | 6 "
-puts "-----------"
-puts " 7 | 8 | 9 "
-puts "Type y if you want to start"

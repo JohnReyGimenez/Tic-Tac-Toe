@@ -1,5 +1,5 @@
 class Game
-  def initialiaze
+  def initialize
     @winning_combination = [
       [0,1,2], #top row
       [3,4,5], #middle row
@@ -12,9 +12,10 @@ class Game
     ]
   end
  
-  def play(board)
+  def play_game(board)
     until counter == 9
-      counter += 1
+      display_board
+      puts "#{current_player}, choose a position (1-9)"
     if counter == 9 
       puts "its a draw!"
     end 
