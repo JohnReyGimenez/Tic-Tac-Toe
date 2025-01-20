@@ -11,7 +11,7 @@ class Game
       [2,4,6], #right diagonal
     ]
   end
- 
+  
   def play_game(board)
     until counter == 9
       turn(board)
@@ -23,6 +23,17 @@ class Game
       puts "its a draw!"
     end
   end 
+
+  def turn(board)
+    puts "Enter 1-9"
+    user_input = gets.strip
+    index = input_to_index(user_input)
+    if valid_move?(board, index)
+      move(board, index, current_player(board))
+      turn(board)
+    end
+    display_board(board)
+  end
 
   def won?(winning_combination, board)
     winning_combination.each do |subarray|
