@@ -14,11 +14,15 @@ class Game
  
   def play_game(board)
     until counter == 9
-      display_board
+      turn(board)
       puts "#{current_player}, choose a position (1-9)"
-    if counter == 9 
+    if won?(board)
+      winner(board) == "X" || winner(board) == "O"
+      puts "#{winner(board)} wins!"
+    elsif draw?(board)
       puts "its a draw!"
-    end 
+    end
+  end 
 
   def won?(winning_combination, board)
     winning_combination.each do |subarray|
