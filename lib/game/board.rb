@@ -4,14 +4,17 @@ class Board
   end
   
   def display_instructions
-    puts "Shown below are the coordinates of the cells where you will put your tokens"
-    puts "to put your token(X/O) in a cell simply type the number where you wanna put it"
-    puts " 1 | 2 | 3 "
-    puts "-----------"
-    puts " 4 | 5 | 6 "
-    puts "-----------"
-    puts " 7 | 8 | 9 "
-    puts "Type y if you want to start"
+     <<HEREDOC Shown below are the coordinates of the cells where you will put your tokens
+     to put your token(X/O) in a cell simply type the number where you wanna put it
+      1 | 2 | 3 
+     -----------
+      4 | 5 | 6 
+     -----------
+      7 | 8 | 9 
+     Type y if you want to start
+    HEREDOC
+
+  
     start = gets.chomp
     if start == 'y'
       play_game
