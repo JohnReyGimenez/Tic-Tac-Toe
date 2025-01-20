@@ -23,17 +23,12 @@ class Player
       return true
   end
 
-  def turns(board) 
-    board.each do |cells| 
-      if cells == "X" || if cells == "O"
-        counter += 1
-      end
-    end
-    counter
+  def turn_count(board) 
+    board.count {|space| space == "X"|| space == "O"}
   end
 
   def current_turn(board)
-    
+    turn_count(board).even? ? "X" : "O"
   end
 end
 
