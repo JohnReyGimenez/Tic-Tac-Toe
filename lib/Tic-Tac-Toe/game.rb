@@ -43,6 +43,10 @@ class Game
     end
     false
   end
+
+  def draw?(board)
+    
+  end
 end
 
 # The game has 2 tokens which are X and O
