@@ -4,7 +4,8 @@ class Board
   end
   
   def display_instructions
-     <<-HEREDOC 
+
+  instructions = <<-HEREDOC 
      Shown below are the coordinates of the cells where you will put your tokens
      to put your token(X/O) in a cell simply type the number where you wanna put it
       1 | 2 | 3 
@@ -14,8 +15,7 @@ class Board
       7 | 8 | 9 
      Type y if you want to start
 HEREDOC
-
-  
+    puts instructions
     start = gets.chomp
     if start == 'y'
       play_game
