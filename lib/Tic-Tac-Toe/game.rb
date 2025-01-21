@@ -43,9 +43,19 @@ class Game
     end
     false
   end
+  
+  def full?(board)
+    board.all? {|i| i == "X" || i == "O"}
+  end
 
   def draw?(board)
-    
+    if !won?(board) && full?(board)
+      return true
+    elsif !won?(board) && !full?(board)
+      return false
+    else won?(board)
+      return false
+    end
   end
 end
 
