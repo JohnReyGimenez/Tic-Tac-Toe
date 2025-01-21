@@ -57,6 +57,11 @@ class Game
       return false
     end
   end
+
+  def over?(board)
+    if draw?(board) || won?(board) || full?(board)
+      return true
+    end
 end
 
 # The game has 2 tokens which are X and O
