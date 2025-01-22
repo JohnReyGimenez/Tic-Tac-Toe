@@ -10,12 +10,14 @@ class Game
       [0,4,7], #left diagonal
       [2,4,6], #right diagonal
     ]
+    @counter = 0
   end
   
   def play_game(board)
-    until counter == 9
+    until @counter == 9
       turn(board)
       puts "#{current_player}, choose a position (1-9)"
+      @counter += 1
     end
     if won?(board)
       winner(board) == "X" || winner(board) == "O"

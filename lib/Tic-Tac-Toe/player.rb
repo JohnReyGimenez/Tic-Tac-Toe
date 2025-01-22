@@ -1,8 +1,4 @@
 class Player
-  def initialize
-    @counter = 0
-  end
-
   def input_to_index(user_input)
     user_input.to_i - 1 
   end
