@@ -14,14 +14,18 @@ class Game
   end
   
   def play_game(board)
-    until @counter == 9
-      turn(board)
+    current_player = "X"
+    until board.full?
+      board.display_board
       puts "#{current_player}, choose a position (1-9)"
-      @counter += 1
-    end
+      user_input = get.strip
+      index = input_to_index(user_input)
+    
+    if board.valid_move?(index)
+      board.update_board(index, current_player)
     if won?(board)
-      winner(board) == "X" || winner(board) == "O"
-      puts "#{winner(board)} wins!"
+      board.update_board
+      puts "#{current_player}, Wins!"
     elsif draw?(board)
       puts "its a draw!"
     end
