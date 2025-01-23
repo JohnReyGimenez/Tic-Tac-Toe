@@ -15,7 +15,7 @@ class Game
   
   def play_game(board)
     current_player = "X"
-    until board.full?
+    loop do
       board.display_board
       puts "#{current_player}, choose a position (1-9)"
       user_input = get.strip
@@ -23,12 +23,23 @@ class Game
     
     if board.valid_move?(index)
       board.update_board(index, current_player)
-    if won?(board)
-      board.display_board
-      puts "#{current_player}, Wins!"
-      return 
+
+      if won?(board)
+        board.display_board
+        puts "#{current_player}, Wins!"
+        break
+      end
+
+      elsif board.all? {|i| i == "X" || i == "O"}
+        board.display_board
+        puts "its a draw!"
+        break
+      end
+      current_player = switch_player(current_player)
+    else 
+      puts "that position is already taken."
     end
-    current_player = switch_player(current_player)
+    end
   end 
 
   def turn(board)
@@ -51,9 +62,7 @@ class Game
     false
   end
   
-  def full?(board)
-    board.all? {|i| i == "X" || i == "O"}
-  end
+ 
 
   def draw?(board)
     if !won?(board) && full?(board)
@@ -70,6 +79,5 @@ class Game
       return true
     end
   end
-
 end
 
