@@ -8,17 +8,16 @@ class Player
   end
 
   def position_taken?(board, index)
-    if (board[index] == "") || (board[index] == '') || (board[index] == nil )
+    if (board[index] == " ")
       return true
-    else 
-      return false
     end
+    return false
   end
 
 
   def valid_move?(board, index)
     if (board.between?(0, 8)) && !position_taken(board, index)
-      return trueclass Player
+      return true
     end
   end
 
@@ -36,6 +35,10 @@ class Player
 
   def current_turn(board)
     turn_count(board).even? ? "X" : "O"
+  end
+
+  def switch_player(current_player)
+    current_player == "X" ? "O" : "X"
   end
 end
 

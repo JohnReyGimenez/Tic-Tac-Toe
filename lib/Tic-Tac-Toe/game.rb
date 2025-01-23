@@ -24,11 +24,11 @@ class Game
     if board.valid_move?(index)
       board.update_board(index, current_player)
     if won?(board)
-      board.update_board
+      board.display_board
       puts "#{current_player}, Wins!"
-    elsif draw?(board)
-      puts "its a draw!"
+      return 
     end
+    current_player = switch_player(current_player)
   end 
 
   def turn(board)
@@ -70,5 +70,6 @@ class Game
       return true
     end
   end
+
 end
 
