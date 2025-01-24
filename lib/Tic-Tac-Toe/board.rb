@@ -32,6 +32,6 @@ HEREDOC
   end
   
   def update_board(index, token)
-    board[index] == token
+    board[index] = token
   end
 end
