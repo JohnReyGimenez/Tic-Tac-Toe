@@ -1,4 +1,5 @@
 class Player
+  attr_reader :token
   def initialize
     @token = token
   end
@@ -10,16 +11,11 @@ class Player
   end
 
   def position_taken?(board, index)
-    if (board[index] == " ")
-      return true
-    end
-    return false
+    board[index] != " "
   end
 
   def valid_move?(board, index)
-    if (board.between?(0, 8)) && !position_taken(board, index)
-      return true
-    end
+    (board.between?(0, 8)) && !position_taken(board, index)
   end
 
   def input_to_index(user_input)
