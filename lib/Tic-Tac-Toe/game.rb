@@ -21,25 +21,22 @@ class Game
       user_input = get.strip
       index = input_to_index(user_input)
     
-    if board.valid_move?(index)
-      board.update_board(index, current_player)
+      if board.valid_move?(index)
+        board.update_board(index, current_player)
 
-      if won?(board)
-        board.display_board
-        puts "#{current_player}, Wins!"
+        if won?(board)
+          board.display_board
+          puts "#{current_player}, Wins!"
+        break
+        elsif board.all? {|i| i == "X" || i == "O"}
+          board.display_board
+          puts "its a draw!"
         break
       end
-
-      elsif board.all? {|i| i == "X" || i == "O"}
-        board.display_board
-        puts "its a draw!"
-        break
+        current_player = switch_player(current_player)
+      else 
+      puts "that position is already taken or invalid, try again."
       end
-      current_player = switch_player(current_player)
-      end
-    else 
-      puts "that position is already taken."
-    end
     end
   end 
 
