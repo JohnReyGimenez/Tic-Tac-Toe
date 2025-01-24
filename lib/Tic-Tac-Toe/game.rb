@@ -36,6 +36,7 @@ class Game
         break
       end
       current_player = switch_player(current_player)
+      end
     else 
       puts "that position is already taken."
     end
@@ -46,11 +47,14 @@ class Game
     puts "Enter 1-9"
     user_input = gets.strip
     index = input_to_index(user_input)
+
     if valid_move?(board, index)
       move(board, index, current_player(board))
-      turn(board)
+      display_board(board)
+    else
+      puts "invalid move try again."
+      turn board
     end
-    display_board(board)
   end
 
   def won?(winning_combination, board)
