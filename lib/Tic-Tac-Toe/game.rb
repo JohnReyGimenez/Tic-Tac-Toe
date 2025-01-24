@@ -18,7 +18,7 @@ class Game
     loop do
       board.display_board
       puts "#{current_player}, choose a position (1-9)"
-      user_input = get.strip
+      user_input = gets.strip
       index = input_to_index(user_input)
     
       if board.valid_move?(index)
