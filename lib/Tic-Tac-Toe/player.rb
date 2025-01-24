@@ -1,4 +1,12 @@
 class Player
+  def initialize
+    @token = token
+  end
+
+  def make_move
+
+  end
+  
   def input_to_index(user_input)
     user_input.to_i - 1 
   end
@@ -13,7 +21,6 @@ class Player
     end
     return false
   end
-
 
   def valid_move?(board, index)
     if (board.between?(0, 8)) && !position_taken(board, index)
