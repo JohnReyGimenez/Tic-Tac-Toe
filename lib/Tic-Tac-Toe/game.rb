@@ -12,6 +12,10 @@ class Game
     ]
     @counter = 0
   end
+
+  def input_to_index(user_input)
+    user_input.to_i - 1 
+  end
   
   def play_game(board)
     current_player = "X"
@@ -79,10 +83,6 @@ class Game
     if draw?(board) || won?(board) || full?(board)
       return true
     end
-  end
-
-  def full?
-    @board.all? {|cell| cell == "X" || cell == "O"}
   end
 end
 

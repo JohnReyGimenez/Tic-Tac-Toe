@@ -34,4 +34,14 @@ HEREDOC
   def update_board(index, token)
     board[index] = token
   end
+
+  def valid_move?(board, index)
+    (board.between?(0, 8)) && !position_taken(board, index)
+  end
+
+
+  def full?
+    @board.all? {|cell| cell == "X" || cell == "O"}
+  end
+
 end
