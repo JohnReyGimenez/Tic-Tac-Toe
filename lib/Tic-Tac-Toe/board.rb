@@ -44,4 +44,7 @@ HEREDOC
     @board.all? {|cell| cell == "X" || cell == "O"}
   end
 
+  def board_state
+    @board
+  end
 end
