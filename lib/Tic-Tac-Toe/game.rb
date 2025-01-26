@@ -44,20 +44,6 @@ class Game
     end
   end 
 
-  def turn(board)
-    puts "Enter 1-9"
-    user_input = gets.strip
-    index = input_to_index(user_input)
-
-    if valid_move?(board, index)
-      move(board, index, current_player(board))
-      display_board(board)
-    else
-      puts "invalid move try again."
-      turn board
-    end
-  end
-
   def won?(board)
     @winning_combination.each do |subarray|
       if subarray.all? {|index| board[index]}
@@ -83,6 +69,10 @@ class Game
     if draw?(board) || won?(board) || full?(board)
       return true
     end
+  end
+
+  def switch_player(current_player)
+    current_player == "X" ? "O" : "X"
   end
 end
 
