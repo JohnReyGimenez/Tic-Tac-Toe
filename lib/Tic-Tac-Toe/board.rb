@@ -16,9 +16,10 @@ class Board
      Type y if you want to start
 HEREDOC
     puts instructions
-    start = gets.chomp
+    start = gets.chomp.downcase
     if start != 'y'
       puts "game exited"
+      exit 
     end
 
   end

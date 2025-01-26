@@ -10,7 +10,6 @@ class Game
       [0,4,7], #left diagonal
       [2,4,6], #right diagonal
     ]
-    @counter = 0
   end
 
   def input_to_index(user_input)
@@ -47,9 +46,9 @@ class Game
 
   def won?(board)
     @winning_combination.each do |subarray|
-      if subarray.all? {|index| board[index] == "X"}
+      if subarray.all? {|index| board.board_state[index] == "X"}
         return "X"
-      elsif subarray.all? {|index| board[index] == "O"}
+      elsif subarray.all? {|index| board.board_state[index] == "O"}
         return "O"
       end
     end
