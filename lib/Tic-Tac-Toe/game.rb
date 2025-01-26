@@ -28,9 +28,10 @@ class Game
       if board.valid_move?(index)
         board.update_board(index, current_player)
 
+        winner = won?(board.board_state)
         if won?(board)
           board.display_board
-          puts "#{current_player}, Wins!"
+          puts "#{winner}, Wins!"
         break
         elsif board.all? {|i| i == "X" || i == "O"}
           board.display_board
