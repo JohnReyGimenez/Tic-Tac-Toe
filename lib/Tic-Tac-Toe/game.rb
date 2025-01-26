@@ -28,11 +28,11 @@ class Game
         board.update_board(index, current_player)
 
         winner = won?(board.board_state)
-        if won?(board)
+        if winner
           board.display_board
           puts "#{winner}, Wins!"
         break
-        elsif board.all? {|i| i == "X" || i == "O"}
+        elsif board.full?
           board.display_board
           puts "its a draw!"
         break
