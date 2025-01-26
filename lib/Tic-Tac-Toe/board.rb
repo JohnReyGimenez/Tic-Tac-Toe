@@ -32,11 +32,11 @@ HEREDOC
   end
   
   def update_board(index, token)
-    board[index] = token
+    @board[index] = token
   end
 
   def valid_move?(index)
-    index.between?(0, 8) && board[index] == " "
+    index.between?(0, 8) && @board[index] == " "
   end
 
 

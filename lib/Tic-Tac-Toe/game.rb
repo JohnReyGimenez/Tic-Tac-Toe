@@ -58,8 +58,8 @@ class Game
     end
   end
 
-  def won?(winning_combination, board)
-    winning_combination.each do |subarray|
+  def won?(board)
+    @winning_combination.each do |subarray|
       if subarray.all? {|index| board[index]}
         return true
       end
