@@ -44,11 +44,11 @@ class Game
     end
   end 
 
-  def won?(board)
+  def won?(board_state)
     @winning_combination.each do |subarray|
-      if subarray.all? {|index| board.board_state[index] == "X"}
+      if subarray.all? {|index| board_state[index] == "X"}
         return "X"
-      elsif subarray.all? {|index| board.board_state[index] == "O"}
+      elsif subarray.all? {|index| board_state[index] == "O"}
         return "O"
       end
     end
