@@ -12,7 +12,7 @@ class Game
     ]
   end
 
-  def input_to_index(user_input)
+  def input_to_index(user_input) 
     user_input.to_i - 1 
   end
   
@@ -73,6 +73,7 @@ class Game
     end
   end
 
+  # ternary operator to toggele between X and ) through its argument
   def switch_player(current_player)
     current_player == "X" ? "O" : "X"
   end

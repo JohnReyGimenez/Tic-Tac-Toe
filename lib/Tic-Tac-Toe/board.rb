@@ -32,20 +32,20 @@ HEREDOC
     puts "   #{@board[6] || ''} | #{@board[7] || ''} | #{@board[8] || ''}"
   end
   
-  def update_board(index, token)
+  def update_board(index, token) # Updates board after input
     @board[index] = token
   end
 
-  def valid_move?(index)
+  def valid_move?(index) # Checks if move is valid
     index.between?(0, 8) && @board[index] == " "
   end
 
 
-  def full?
+  def full? # Checks if board is full
     @board.all? {|cell| cell == "X" || cell == "O"}
   end
 
-  def board_state
+  def board_state #Getter method
     @board
   end
 end
