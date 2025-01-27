@@ -19,9 +19,15 @@ Welcome to Tic-Tac-Toe! This is a terminal-based implementation of the classic t
 
 ### Game Board
 The game uses the following numbering system for the board:
-```bash
-  1 | 2 | 3
+   1 | 2 | 3
   ---------
-  4 | 5 | 6
+   4 | 5 | 6
   ---------
-  7 | 8 | 9
+   7 | 8 | 9
+
+### Game Board
+The first player to align three of their tokens (horizontally, vertically, or diagonally) wins.
+If the board is full and no one wins, the game ends in a draw.
+
+### License
+This project is open-source and available under the  [MIT License](LICENSE).
