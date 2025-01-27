@@ -12,9 +12,10 @@ Welcome to Tic-Tac-Toe! This is a terminal-based implementation of the classic t
 2. Run the game by executing:
   ```bash
   ruby main.rb
+  ```
 
 ### Replit Setup
-1. Open the game on Replit: https://replit.com/@gimenezjr5/Tic-Tac-Toe?v=1
+1. Open the game on [Replit](https://replit.com/@gimenezjr5/Tic-Tac-Toe?v=1)
 2. Click the "Run" button to start the game.
 
 ### Game Board
@@ -25,7 +26,7 @@ The game uses the following numbering system for the board:
   ---------
    7 | 8 | 9
 
-### Game Board
+### Rules
 The first player to align three of their tokens (horizontally, vertically, or diagonally) wins.
 If the board is full and no one wins, the game ends in a draw.
 
