@@ -22,9 +22,9 @@ Welcome to Tic-Tac-Toe! This is a terminal-based implementation of the classic t
 The game uses the following numbering system for the board:
 ```
    1 | 2 | 3
-  ---------
+  -----------
    4 | 5 | 6
-  ---------
+  -----------
    7 | 8 | 9
 ```
 
